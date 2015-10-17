@@ -1,23 +1,21 @@
-#include <iostream>
-#include <fstream>
 #include "shares.h"
 
 Share::Share(int sh, size_t len) {
     shares = sh;
     length = len;
-    result = std::vector<char>(len);
+    data = std::vector<char>(len);
     
 }
 
-std::string Share::Result() {
-    return result;
+std::vector<char> Share::Result() {
+    return data;
 }
 
-int Share::Len() {
+size_t Share::Len() {
     return length;
 }
 
-int Share:: TotalShares() {
+int Share:: TotalShares()const {
     return shares;
 }
 

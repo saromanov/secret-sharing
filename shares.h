@@ -13,19 +13,19 @@ class Share {
 
     //total size of the data from share
     size_t length;
-    std::vector<char> result;
+    std::vector<char> data;
 
     public:
         Share(int sh, size_t len);
         void Add();
 
         //Return result of the share
-        std::string Result();
+        std::vector<char> Result();
 
         long id_share();
 
         //Return total number of shares
-        int TotalShares();
+        int TotalShares() const;
 
         size_t Len();
 

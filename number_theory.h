@@ -1,4 +1,4 @@
-#include "shares.h"
+#include "shares.cpp"
 #include <iostream>
 #include <vector>
 #include <cstdlib>

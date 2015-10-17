@@ -5,12 +5,12 @@ NumberTheory::NumberTheory(const char* _path) {
 }
 
 std::vector<char> NumberTheory::readfile() {
-    ifstream target(path);
-    ifstream::pos_type pos = ifs.tellg();
+    std::ifstream target(path);
+    std::ifstream::pos_type pos = target.tellg();
     size_t size = pos;
     std::vector<char> result(size);
-    ifs.sekg(0, ios::beg);
-    ifs.read(&result[0], pos);
+    target.seekg(0, std::ios::beg);
+    target.read(&result[0], pos);
     target.close();
 
 }
@@ -53,10 +53,6 @@ std::vector<Share> NumberTheory::Sharing() {
 
 //For revealing you need to put two shares
 std::string Revealing(Share share1, Share share2) {
-    if(shares.length == 0 ) {
-        return std::string("");
-    }
-
     int len1 = share1.Len();
     int len2 = share2.Len();
 
@@ -65,10 +61,12 @@ std::string Revealing(Share share1, Share share2) {
     }
 
     const int p = 257;
+    auto sh1 = share1.Result();
+    auto sh2 = share2.Result();
     std::vector<char> vec(len1);
     for(auto i = 0;i < len1;++i) {
-        int byte1 = share1[i];
-        int byte2 = share2[i];
+        int byte1 = sh1[i];
+        int byte2 = sh2[i];
         if(byte1 == 0) {
             byte1 = 256;
         }
@@ -77,7 +75,7 @@ std::string Revealing(Share share1, Share share2) {
             byte2 = 256;
         }
 
-        int a = pow(byte1, 2) * 1/byte2 % p;
+        int a = fmod((pow(byte1, 2) * (1/byte2)), p);
 
     }
 
