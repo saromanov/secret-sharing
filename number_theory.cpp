@@ -1,5 +1,9 @@
 #include "number_theory.h"
 
+NumberTheory::NumberTheory(const char* _path) {
+    path = _path;
+}
+
 std::vector<char> NumberTheory::readfile() {
     ifstream target(path);
     ifstream::pos_type pos = ifs.tellg();
@@ -17,10 +21,10 @@ int NumberTheory::randint(int start, int end){
     return start + (randval % (int)(end - start + 1));
 }
 
-Shares[] NumberTheory::Sharing() {
+std::vector<Share> NumberTheory::Sharing() {
     auto filedata = readfile();
     int p = 257;
-    Shares[] result;
+    std::vector<Share> result;
     for(const char &i: filedata) {
         int byte = i;
         if(byte == 0) {

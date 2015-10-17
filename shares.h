@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 //Every secret sharing method returns list of this class objects
 
@@ -24,7 +25,7 @@ class Share {
         long id_share();
 
         //Return total number of shares
-        int shares();
+        int TotalShares();
 
         size_t Len();
 

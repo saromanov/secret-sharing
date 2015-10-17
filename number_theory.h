@@ -17,8 +17,8 @@ class NumberTheory {
     std::vector<char> readfile();
     int randint(int start, int end);
     public:
-        NumberTheory(const char* _path):path(_path);
-        Share[] Sharing();
-        std::string Revealing(Share[] shares);
+        NumberTheory(const char*);
+        std::vector<Share> Sharing();
+        std::string Revealing(Share shar1, Share shar2);
 
-}
+};

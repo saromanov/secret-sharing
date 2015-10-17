@@ -17,3 +17,7 @@ int Share::Len() {
     return length;
 }
 
+int Share:: TotalShares() {
+    return shares;
+}
+
