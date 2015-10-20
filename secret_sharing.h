@@ -7,7 +7,9 @@ class SecretSharing {
     public:
 
         //Sharing function which returns vector of shares
-        virtual std::vector<T> Sharing();
+        virtual std::vector<T> Sharing() = 0;
 
-        virtual std::string Revealing(std::vector<T>);
+        std::string Revealing(std::vector<T>) {
+            return std::string("");
+        }
 };

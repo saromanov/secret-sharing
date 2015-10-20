@@ -1,4 +1,4 @@
-#include "shares.h"
+#include "shares.cpp"
 #include "secret_sharing.h"
 #include <iostream>
 #include <vector>
@@ -20,6 +20,6 @@ class NumberTheory: public SecretSharing<Share> {
     public:
         NumberTheory(const char*);
         std::vector<Share> Sharing();
-        std::string Revealing(Share shar1, Share shar2);
+        std::string Revealing(std::vector<Share>);
 
 };
