@@ -1,6 +1,6 @@
 #include <vector>
 #include <string>
-#include "share.cpp"
+#include "shares.h"
 
 //Abstract class for secret sharing methods
 class SecretSharing {
