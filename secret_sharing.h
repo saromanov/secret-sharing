@@ -1,13 +1,13 @@
 #include <vector>
 #include <string>
-#include "shares.h"
 
 //Abstract class for secret sharing methods
+template<typename T>
 class SecretSharing {
     public:
 
         //Sharing function which returns vector of shares
-        virtual std::vector<Share> Sharing();
+        virtual std::vector<T> Sharing();
 
-        virtual std::string Revealing(std::vector<Share>);
+        virtual std::string Revealing(std::vector<T>);
 };

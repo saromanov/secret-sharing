@@ -52,7 +52,12 @@ std::vector<Share> NumberTheory::Sharing() {
 }
 
 //For revealing you need to put two shares
-std::string Revealing(Share share1, Share share2) {
+std::string Revealing(std::vector<Share> vecinp) {
+    if(vecinp.size() != 2) {
+        return std:: string("");
+    }
+    auto share1 = vecinp[0];
+    auto share2 = vecinp[1];
     int len1 = share1.Len();
     int len2 = share2.Len();
 
